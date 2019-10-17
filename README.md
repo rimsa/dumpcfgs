@@ -8,23 +8,23 @@ It supports the output of CFGs in two formats: CFGgrind
 
 ## Building
 
-1) Download spack from github and load its environment.
+Download spack from github and load its environment.
 
     $ git clone https://github.com/spack/spack.git
     $ . spack/share/spack/setup-env.sh
 
-2) Install dyninst with spack.
+Install dyninst with spack.
 
     $ spack install dyninst
 
-3) Load dyninst, tbb and boost from spack. This step is responsible to sets
+Load dyninst, tbb and boost from spack. This step is responsible to sets
 the correct paths for include and library files.
 
     $ spack load dyninst
     $ spack load tbb
     $ spack load boost
 
-4) Download dumpcfgs and build with make.
+Download dumpcfgs and build with make.
 
     $ git clone https://github.com/rimsa/dumpcfgs
     $ cd dumpcfgs
