@@ -132,7 +132,7 @@ void dumpCFG(BPatch_function* funct, enum OutputMode mode) {
     std::cout << std::hex;
     switch (mode) {
         case CFG_OUTPUT:
-            std::cout << "[cfg 0x" << faddr << " " << (fname.compare("main") == 0 ?  "true" : "false")
+            std::cout << "[cfg 0x" << faddr
                       << " \"" << fname << "\" " << (complete ? "true" : "false") << "]" << std::endl;
             break;
         case DOT_OUTPUT:
@@ -163,7 +163,7 @@ void dumpCFG(BPatch_function* funct, enum OutputMode mode) {
                 std::cout << "[node 0x" << faddr << " 0x" << baddr;
 
                 std::cout << std::dec;
-                std::cout << " [";
+                std::cout << " " << bsize << " [";
                 break;
             case DOT_OUTPUT:
                 std::cout << "  \"0x" << baddr << "\" [label=\"{" << std::endl;
