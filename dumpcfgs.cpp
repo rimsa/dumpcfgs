@@ -240,7 +240,7 @@ void dumpCFG(BPatch_function* funct, enum OutputMode mode) {
 
         switch (mode) {
             case CFG_OUTPUT:
-                std::cout << "] " << (dynamic ? "true" : "false") << " [";
+                std::cout << "] [] " << (dynamic ? "true" : "false") << " [";
                 break;
             case DOT_OUTPUT:
                 std::cout << "  }\"]" << std::endl;
