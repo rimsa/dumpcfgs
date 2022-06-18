@@ -64,8 +64,8 @@ void getBlockProperties(BPatch_function* funct, BPatch_basicBlock* block, std::s
     std::vector<Dyninst::ParseAPI::Function*> funcs;
     Dyninst::ParseAPI::Block* apiBlock = Dyninst::ParseAPI::convert(block);
 
-    std::list<Dyninst::ParseAPI::Edge*> targets = apiBlock->targets();
-    for (std::list<Dyninst::ParseAPI::Edge*>::iterator it = targets.begin(), ed = targets.end();
+    std::set<Dyninst::ParseAPI::Edge*> targets = apiBlock->targets();
+    for (std::set<Dyninst::ParseAPI::Edge*>::iterator it = targets.begin(), ed = targets.end();
             it != ed; ++it) {
         Dyninst::ParseAPI::Edge* edge = *it;
         assert(edge != 0);

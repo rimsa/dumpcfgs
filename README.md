@@ -72,4 +72,5 @@ search for it in the $LIBRARY_PATH and update the variable accordingly.
     $ ./dumpcfgs /bin/sleep
     --SERIOUS-- #101: Environment variable DYNINSTAPI_RT_LIB has not been defined
     ...
-    $ export DYNINSTAPI_RT_LIB="$(find ${LIBRARY_PATH//:/ } -name libdyninstAPI_RT.so)"
+    $ export DYNINSTAPI_RT_LIB=$(find $(spack location -i dyninst) -name 'libdyninstAPI_RT.so')
+

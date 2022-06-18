@@ -2,10 +2,10 @@ CC=gcc
 CFLAGS=-g -ggdb -O2 -Wall
 
 CXX=g++
-CXXFLAGS=-g -ggdb -O2 -Wall -std=c++11 -I"${CPATH}"
+CXXFLAGS=-g -ggdb -O2 -Wall -std=c++11 -I"$(shell spack location -i dyninst)/include" -I"$(shell spack location -i tbb)/include" -I"$(shell spack location -i boost)/include"
 
 LD=ld
-LDFLAGS=-L"${LIBRARY_PATH}" -ldyninstAPI -linstructionAPI -lparseAPI
+LDFLAGS=-L"$(shell spack location -i dyninst)/lib" -I"$(shell spack location -i tbb)/lib" -I"$(shell spack location -i boost)/lib"  -ldyninstAPI -linstructionAPI -lparseAPI
 
 RM=rm
 RMFLAGS=-rf
